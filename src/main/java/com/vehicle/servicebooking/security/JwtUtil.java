@@ -36,8 +36,10 @@ public class JwtUtil {
   public boolean validateToken(String token) {
     try {
       parseClaims(token);
+      System.out.println("✅ Token validated successfully");
       return true;
     } catch (JwtException e) {
+      System.out.println("❌ Token validation error: " + e.getMessage());
       return false;
     }
   }
